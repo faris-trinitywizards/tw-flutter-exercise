@@ -5,9 +5,10 @@ import 'package:trinity_lecture_app/core/commons/colors_const.dart';
 import 'package:trinity_lecture_app/presentation/widgets/atoms/text_theme_extension.dart';
 import 'package:trinity_lecture_app/presentation/widgets/organisms/ui_helper.dart';
 
-import '../../../core/commons/constants.dart';
 import '../../widgets/molecules/action_text.dart';
 import '../../widgets/molecules/platform_app_bar.dart';
+import 'dummy_ui_container_card.dart';
+import 'dummy_ui_image_card.dart';
 
 @RoutePage()
 class DummyUiFirstPage extends StatelessWidget {
@@ -100,90 +101,3 @@ class DummyUiFirstPage extends StatelessWidget {
     );
   }
 }
-
-class DummyUiRectangleImage extends StatelessWidget {
-  const DummyUiRectangleImage({super.key, this.imgSrc, this.title});
-
-  final String? imgSrc;
-  final String? title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ClipRRect(
-          borderRadius: UIHelper.borderRadiusCircular(all: 10.0),
-          child: Image.network(
-            imgSrc ?? Constants.dummyImg,
-            width: UIHelper.setSp(70.0),
-            height: UIHelper.setSp(70.0),
-            fit: BoxFit.cover,
-          ),
-        ),
-        UIHelper.verticalSpace(4.0),
-        if (title != null) Text(title!, style: context.textTheme.bodySmall,)
-      ],
-    );
-  }
-}
-
-class DummyUiContainerCard extends StatelessWidget {
-  const DummyUiContainerCard({super.key, required this.title});
-  
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: UIHelper.padding(top: 4.0),
-      padding: UIHelper.padding(horizontal: 12.0, vertical: 20.0),
-      decoration: BoxDecoration(
-          border: Border.all(color: ColorConstant.grey, width: 0.5),
-          borderRadius: UIHelper.borderRadiusCircular(all: 10)),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          DummyUiRectangleImage(
-            imgSrc: Constants.dummyImg,
-          ),
-          UIHelper.horizontalSpace(12.0),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: context.textTheme.headlineSmall,
-                ),
-                UIHelper.verticalSpace(8.0),
-                Text(
-                  "Jill Lepore . 23 May 2023",
-                  style: context.textTheme.labelSmall,
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-class DummyUiImageCard extends StatelessWidget {
-  const DummyUiImageCard({super.key, this.title});
-
-  final String? title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: UIHelper.padding(top: 4.0),
-      padding: UIHelper.padding(horizontal: 8.0, vertical: 20.0),
-      decoration: BoxDecoration(
-          border: Border.all(color: ColorConstant.grey, width: 0.5),
-          borderRadius: UIHelper.borderRadiusCircular(all: 10)),
-      child: DummyUiRectangleImage(title: title,),
-    );
-  }
-}
-
