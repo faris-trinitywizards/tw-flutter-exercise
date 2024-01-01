@@ -1,7 +1,11 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:trinity_lecture_app/core/routes/app_router_path.dart';
 import 'package:trinity_lecture_app/presentation/widgets/molecules/action_text.dart';
+
+import '../../widgets/organisms/ui_helper.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget {
@@ -12,11 +16,13 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: UIHelper.padding(vertical: 24.0, horizontal: 24.0),
           child: Column(
             children: [
               ActionText(
-                onTap: () {},
+                onTap: () {
+                  context.router.navigateNamed(AppRouterPath.dummyUiFirstPage);
+                },
                 title: "Dummy UI",
                 desc: "Introduction basic flutter widget ui",
               ),
