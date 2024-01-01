@@ -1,7 +1,9 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:trinity_lecture_app/core/commons/colors_const.dart';
+import 'package:trinity_lecture_app/core/routes/app_router_path.dart';
 import 'package:trinity_lecture_app/presentation/widgets/atoms/text_theme_extension.dart';
 import 'package:trinity_lecture_app/presentation/widgets/organisms/ui_helper.dart';
 
@@ -29,7 +31,9 @@ class DummyUiFirstPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ActionText(
-                onTap: () {},
+                onTap: () {
+                  context.router.navigateNamed(AppRouterPath.dummyUiSecondPage);
+                },
                 title: "Nest",
                 desc: "TabBar, GridView, ListView",
               ),
