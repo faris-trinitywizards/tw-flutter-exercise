@@ -5,10 +5,10 @@ import 'package:trinity_lecture_app/core/commons/colors_const.dart';
 import 'package:trinity_lecture_app/presentation/widgets/atoms/text_theme_extension.dart';
 import 'package:trinity_lecture_app/presentation/widgets/organisms/ui_helper.dart';
 
-import '../../widgets/molecules/action_text.dart';
-import '../../widgets/molecules/platform_app_bar.dart';
-import 'dummy_ui_container_card.dart';
-import 'dummy_ui_image_card.dart';
+import '../../../widgets/molecules/action_text.dart';
+import '../../../widgets/molecules/platform_app_bar.dart';
+import '../dummy_ui_container_card.dart';
+import '../dummy_ui_image_card.dart';
 
 @RoutePage()
 class DummyUiFirstPage extends StatelessWidget {

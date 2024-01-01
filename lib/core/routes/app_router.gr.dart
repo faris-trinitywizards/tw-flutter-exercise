@@ -9,7 +9,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i4;
-import 'package:trinity_lecture_app/presentation/pages/dummy/dummy_ui_first_page.dart'
+import 'package:trinity_lecture_app/presentation/pages/dummy/first/dummy_ui_first_page.dart'
     as _i1;
 import 'package:trinity_lecture_app/presentation/pages/home/home_page.dart'
     as _i2;
